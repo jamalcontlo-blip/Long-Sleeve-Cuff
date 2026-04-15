@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[3PCS] Premium Long Sleeve Cuff | Inner Muslimah,Bahan Spandek Premium</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { --primary: #EE4D2D; --bg: #f5f5f5; --white: #fff; --border: #f2f2f2; --text-muted: #888; }
+        * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color: transparent; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: #333; }
+        .container { max-width: 500px; margin: 0 auto; background: var(--white); min-height: 100vh; position: relative; }
+        
+        .product-swiper { width: 100%; aspect-ratio: 1/1; background: #fafafa; margin-top: 0; }
+        
+        /* Flash Sale bar */
+        .flash-sale-bar { color: white; display: flex; align-items: center; justify-content: space-between; padding: 12px 15px; }
+        .fs-left { display: flex; flex-direction: column; }
+        .fs-label { font-size: 16px; font-weight: 900; text-transform: uppercase; font-style: italic; }
+        .fs-subtext { font-size: 9px; font-weight: 700; opacity: 0.9; }
+        .fs-right { display: flex; flex-direction: column; align-items: flex-end; }
+        .fs-timer-label { font-size: 10px; font-weight: 700; margin-bottom: 4px; }
+        .timer-box { background: rgba(0,0,0,0.3); padding: 3px 8px; border-radius: 3px; font-size: 13px; font-weight: 900; font-family: monospace; }
+        
+        .p-info { padding: 15px; border-bottom: 1px solid var(--border); background: #fff; }
+        .p-price-now { font-size: 1.8rem; color: var(--primary); font-weight: 800; }
+        .p-price-was { font-size: 0.85rem; color: #999; text-decoration: line-through; }
+        .p-discount-tag { background: #fee2e2; color: #ef4444; font-size: 11px; font-weight: 800; padding: 2px 6px; border-radius: 4px; }
+        .p-title { font-size: 1rem; font-weight: 600; line-height: 1.4; margin-bottom: 10px; }
+        
+        /* Store Section Bar */
+        .shop-section { display: flex; align-items: center; gap: 12px; padding: 15px; border-bottom: 8px solid #f1f1f1; background: #fff; }
+        .shop-logo { width: 45px; height: 45px; border-radius: 50%; object-fit: cover; border: 1px solid #eee; }
+        .shop-info { flex: 1; }
+        .shop-name { font-size: 14px; font-weight: 700; color: #333; }
+        .shop-meta { font-size: 11px; color: #888; margin-top: 2px; }
+
+        .s-section { padding: 15px; border-bottom: 8px solid #f1f1f1; background: #fff; }
+        .s-section-title { font-weight: 800; font-size: 13px; color: #333; text-transform: uppercase; }
+        
+        /* Horizontal Variants Scroll */
+        .variant-scroll-container { display: flex; gap: 10px; overflow-x: auto; padding: 5px 0 15px; scrollbar-width: none; -ms-overflow-style: none; }
+        .variant-scroll-container::-webkit-scrollbar { display: none; }
+        .variant-card { flex: 0 0 100px; border: 1px solid #eee; border-radius: 4px; padding: 4px; position: relative; cursor: pointer; transition: 0.2s; background: #fff; }
+        .v-card-img { width: 100%; aspect-ratio: 1/1; overflow: hidden; border-radius: 2px; margin-bottom: 6px; }
+        .v-card-img img { width: 100%; height: 100%; object-fit: cover; }
+        .v-card-name { font-size: 11px; text-align: center; color: #555; font-weight: 500; height: 32px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .v-check { position: absolute; top: 0; right: 0; background: var(--primary); color: #fff; width: 16px; height: 16px; border-radius: 0 3px 0 8px; font-size: 9px; display: none; align-items: center; justify-content: center; z-index: 2; }
+        .variant-card.active { border-color: var(--primary); }
+        .variant-card.active .v-card-name { color: var(--primary); font-weight: 700; }
+        .variant-card.active .v-check { display: flex; }
+
+        .shipping-box { display: flex !important; align-items: center; gap: 12px; padding: 15px; border-bottom: 8px solid #f1f1f1; background: #fff; cursor: pointer; }
+        .shipping-icon { color: #26aa99; font-size: 18px; }
+        .shipping-text { flex: 1; }
+        .shipping-title { font-size: 12px; font-weight: 600; color: #26aa99; display: flex; align-items: center; gap: 6px; }
+        .shipping-desc { font-size: 11px; color: #888; margin-top: 2px; }
+        
+        /* Features Section */
+        .s-section-features { background: #fff; border-bottom: 8px solid #f1f1f1; }
+        .features-vertical-list { display: flex; flex-direction: column; }
+        .feature-vertical-item { padding: 0 0 30px 0; }
+        .feature-img-large { width: 100%; height: auto; display: block; }
+        .feature-content-large { padding: 15px 20px; }
+        .feature-title-large { font-size: 15px; font-weight: 800; color: #333; margin-bottom: 8px; }
+        .feature-desc-large { font-size: 12px; color: #666; line-height: 1.6; }
+
+        .dropdown-trigger { padding: 15px; display: flex; justify-content: space-between; align-items: center; font-weight: 700; font-size: 13px; cursor: pointer; color: #444; border-bottom: 1px solid #f8f8f8;}
+        .dropdown-content { padding: 0 15px 15px; font-size: 13px; color: #666; white-space: pre-wrap; line-height: 1.6; display: none; }
+        .dropdown-content.active { display: block; }
+        
+        .s-testimonial-item { padding: 15px 0; border-bottom: 1px solid #f8f8f8; }
+        .st-header { display: flex; gap: 10px; align-items: center; margin-bottom: 10px; }
+        .st-avatar { width: 32px; height: 32px; border-radius: 50%; border: 1px solid #eee; }
+        .st-name { font-size: 12px; font-weight: 600; color: #333; }
+        .st-stars { color: #f1c40f; font-size: 9px; margin: 2px 0; }
+        .st-meta { font-size: 10px; color: #999; }
+        .st-text { font-size: 12px; color: #444; line-height: 1.6; margin-bottom: 10px; }
+        .st-media img { width: 80px; height: 80px; object-fit: cover; border-radius: 6px; border: 1px solid #eee; }
+        
+        .lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 2000; display: none; justify-content: center; align-items: center; padding: 20px; }
+        .lightbox-container { background: transparent; padding: 0; border-radius: 12px; width: 70%; max-width: 350px; position: relative; }
+        .lightbox img { width: 100%; height: auto; border-radius: 12px; display: block; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+        .lightbox-close { position: absolute; top: -40px; right: 0; color: #fff; font-size: 32px; cursor: pointer; }
+
+        /* Variant Summary styles - FIXED SMALLER SIZING */
+        .summary-card { display: flex; align-items: center; gap: 10px; padding: 10px; border: 1px solid #f0f0f0; border-radius: 8px; margin-bottom: 15px; background: #fafafa; }
+        .summary-img { width: 48px; height: 48px; border-radius: 4px; object-fit: cover; border: 1px solid #eee; flex-shrink: 0; }
+        .summary-info { flex: 1; min-width: 0; }
+        .summary-title { font-size: 12px; font-weight: 700; color: #333; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .summary-variant-name { font-size: 10px; font-weight: 600; color: #888; background: #eee; padding: 2px 8px; border-radius: 3px; display: inline-block; margin-top: 3px; }
+        .summary-check { margin-left: 8px; color: #26aa99; font-size: 16px; }
+
+        /* Related Products Section */
+        .related-swiper { padding: 5px 0 20px; }
+        .related-card { border: 1px solid #eee; border-radius: 12px; overflow: hidden; background: #fff; height: 100%; display: flex; flex-direction: column; transition: transform 0.2s; }
+        .related-card:active { transform: scale(0.98); }
+        .related-img { width: 100%; aspect-ratio: 1/1; object-fit: cover; }
+        .related-info { padding: 12px; flex: 1; display: flex; flex-direction: column; gap: 4px; }
+        .related-name { font-size: 11px; font-weight: 700; color: #333; height: 32px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.4; }
+        .related-price-row { display: flex; flex-direction: column; }
+        .related-price-now { font-size: 13px; font-weight: 800; color: var(--primary); }
+        .related-price-was { font-size: 9px; color: #999; text-decoration: line-through; }
+        .related-btn { margin-top: 8px; font-size: 10px; font-weight: 800; color: #fff; text-align: center; padding: 8px; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="swiper product-swiper" id="main-slider"><div class="swiper-wrapper"><div class="swiper-slide swiper-slide-video"><video class="slide-video" autoplay muted loop playsinline src="https://down-tx-sg.vod.susercontent.com/api/v4/11110105/mms/id-11110105-6vdve-mijwa8h3mtxgd7.16004081774290612.mp4" style="width:100%; height:100%; object-fit:contain; background:#000;"></video></div><div class="swiper-slide"><img src="https://down-id.img.susercontent.com/file/id-11134207-8224o-mijmjq7su8shbb@resize_w450_nl.webp" id="main-product-img" style="width:100%; height:100%; object-fit:contain;"></div><div class="swiper-slide"><img src="https://down-id.img.susercontent.com/file/id-11134207-8224t-mijmjq7szv28eb@resize_w450_nl.webp"  style="width:100%; height:100%; object-fit:contain;"></div><div class="swiper-slide"><img src="https://down-id.img.susercontent.com/file/id-11134207-8224u-mijmjq7t2o74eb@resize_w450_nl.webp"  style="width:100%; height:100%; object-fit:contain;"></div><div class="swiper-slide"><img src="https://down-id.img.susercontent.com/file/id-11134207-82252-mijmjq7t5hc079@resize_w450_nl.webp"  style="width:100%; height:100%; object-fit:contain;"></div><div class="swiper-slide"><img src="https://down-id.img.susercontent.com/file/id-11134207-8224o-mijmjq7t6vwg78@resize_w450_nl.webp"  style="width:100%; height:100%; object-fit:contain;"></div></div><div class="swiper-pagination"></div></div>
+        
+        
+        <div class="flash-sale-bar" style="background: #EE4D2D;">
+            <div class="fs-left">
+                <div class="fs-label">FLASH SALE 3PCS 🔥</div>
+                <div class="fs-subtext">PROMO SPESIAL HARI INI</div>
+            </div>
+            <div class="fs-right">
+                <div class="fs-timer-label"><i class="fas fa-clock"></i> BERAKHIR DALAM</div>
+                <div class="timer-box" id="timer">00 : 00 : 00</div>
+            </div>
+        </div>
+
+        <div class="p-info">
+            <div class="p-price-row" style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+                <span class="p-price-now" id="display-price">Rp 199.000</span>
+                <span class="p-price-was">Rp 398.000</span>
+                <span class="p-discount-tag">-50%</span>
+            </div>
+            <h1 class="p-title">[3PCS] Premium Long Sleeve Cuff | Inner Muslimah,Bahan Spandek Premium</h1>
+            
+            <div style="font-size: 11px; color: #757575; display:flex; align-items:center; gap:8px;">
+                <span style="color:#f1c40f">★</span> 4.9 
+                <span style="color:#ddd">|</span> 4.7RB Penilaian 
+                <span style="color:#ddd">|</span> 8.5RB+ Terjual
+            </div>
+        </div>
+
+        <!-- Store Info Section -->
+        <div class="shop-section">
+            <img src="https://down-id.img.susercontent.com/file/id-11134233-81ztk-memt1xkokt1e67@resize_w80_nl.webp" class="shop-logo">
+            <div class="shop-info">
+                <div class="shop-name">OFFICIAL ZHO FASHION </div>
+                <div class="shop-meta">Aktif 1 jam lalu | Kota Jakarta</div>
+            </div>
+        </div>
+
+        
+        <div class="s-section">
+            <div class="s-section-header">
+                <div class="s-section-title">Pilihan: <span id="selected-variant-name" style="color:#EE4D2D; font-weight:500;"></span></div>
+            </div>
+            <div class="variant-scroll-container">
+                
+                    <div class="variant-card active" onclick="selectVariant(this, '199000', 'ZHO FASHION', 'https://down-id.img.susercontent.com/file/id-11134207-8224o-mijmjq7su8shbb@resize_w450_nl.webp')">
+                        <div class="v-card-img">
+                            <img src="https://down-id.img.susercontent.com/file/id-11134207-8224o-mijmjq7su8shbb@resize_w450_nl.webp">
+                        </div>
+                        <div class="v-card-name">ZHO FASHION</div>
+                        <div class="v-check"><i class="fas fa-check"></i></div>
+                    </div>
+                
+                    <div class="variant-card " onclick="selectVariant(this, '199000', 'PUTIH', 'https://down-id.img.susercontent.com/file/id-11134207-8224s-mkkx6avonrpf8d@resize_w450_nl.webp')">
+                        <div class="v-card-img">
+                            <img src="https://down-id.img.susercontent.com/file/id-11134207-8224s-mkkx6avonrpf8d@resize_w450_nl.webp">
+                        </div>
+                        <div class="v-card-name">PUTIH</div>
+                        <div class="v-check"><i class="fas fa-check"></i></div>
+                    </div>
+                
+                    <div class="variant-card " onclick="selectVariant(this, '199000', 'COKELAT', 'https://down-id.img.susercontent.com/file/id-11134207-81zte-menm3u5mvf2b8b@resize_w450_nl.webp')">
+                        <div class="v-card-img">
+                            <img src="https://down-id.img.susercontent.com/file/id-11134207-81zte-menm3u5mvf2b8b@resize_w450_nl.webp">
+                        </div>
+                        <div class="v-card-name">COKELAT</div>
+                        <div class="v-check"><i class="fas fa-check"></i></div>
+                    </div>
+                
+                    <div class="variant-card " onclick="selectVariant(this, '199000', 'HITAM', 'https://down-id.img.susercontent.com/file/id-11134207-81ztf-menm3u5my8776b@resize_w450_nl.webp')">
+                        <div class="v-card-img">
+                            <img src="https://down-id.img.susercontent.com/file/id-11134207-81ztf-menm3u5my8776b@resize_w450_nl.webp">
+                        </div>
+                        <div class="v-card-name">HITAM</div>
+                        <div class="v-check"><i class="fas fa-check"></i></div>
+                    </div>
+                
+                    <div class="variant-card " onclick="selectVariant(this, '199000', 'KREM', 'https://down-id.img.susercontent.com/file/id-11134207-81ztn-mfb9yn4r0qa631@resize_w450_nl.webp')">
+                        <div class="v-card-img">
+                            <img src="https://down-id.img.susercontent.com/file/id-11134207-81ztn-mfb9yn4r0qa631@resize_w450_nl.webp">
+                        </div>
+                        <div class="v-card-name">KREM</div>
+                        <div class="v-check"><i class="fas fa-check"></i></div>
+                    </div>
+                
+                    <div class="variant-card " onclick="selectVariant(this, '199000', 'COKSU', 'https://down-id.img.susercontent.com/file/id-11134207-8224q-mg7oay4tan0pb1@resize_w450_nl.webp')">
+                        <div class="v-card-img">
+                            <img src="https://down-id.img.susercontent.com/file/id-11134207-8224q-mg7oay4tan0pb1@resize_w450_nl.webp">
+                        </div>
+                        <div class="v-card-name">COKSU</div>
+                        <div class="v-check"><i class="fas fa-check"></i></div>
+                    </div>
+                
+                    <div class="variant-card " onclick="selectVariant(this, '199000', 'MAROON', 'https://down-id.img.susercontent.com/file/id-11134207-81ztg-menm3u5n2fwjcb@resize_w450_nl.webp')">
+                        <div class="v-card-img">
+                            <img src="https://down-id.img.susercontent.com/file/id-11134207-81ztg-menm3u5n2fwjcb@resize_w450_nl.webp">
+                        </div>
+                        <div class="v-card-name">MAROON</div>
+                        <div class="v-check"><i class="fas fa-check"></i></div>
+                    </div>
+                
+                    <div class="variant-card " onclick="selectVariant(this, '199000', 'NAVY', 'https://down-id.img.susercontent.com/file/id-11134207-81ztq-mf5k9614ecqzb6@resize_w450_nl.webp')">
+                        <div class="v-card-img">
+                            <img src="https://down-id.img.susercontent.com/file/id-11134207-81ztq-mf5k9614ecqzb6@resize_w450_nl.webp">
+                        </div>
+                        <div class="v-card-name">NAVY</div>
+                        <div class="v-check"><i class="fas fa-check"></i></div>
+                    </div>
+                
+                    <div class="variant-card " onclick="selectVariant(this, '199000', 'KHAKI', 'https://down-id.img.susercontent.com/file/id-11134207-8224p-mfsf2vep2o7d53@resize_w450_nl.webp')">
+                        <div class="v-card-img">
+                            <img src="https://down-id.img.susercontent.com/file/id-11134207-8224p-mfsf2vep2o7d53@resize_w450_nl.webp">
+                        </div>
+                        <div class="v-card-name">KHAKI</div>
+                        <div class="v-check"><i class="fas fa-check"></i></div>
+                    </div>
+                
+                    <div class="variant-card " onclick="selectVariant(this, '199000', 'PUTIH BW', 'https://down-id.img.susercontent.com/file/id-11134207-8224t-mfsf2vep42rt2c@resize_w450_nl.webp')">
+                        <div class="v-card-img">
+                            <img src="https://down-id.img.susercontent.com/file/id-11134207-8224t-mfsf2vep42rt2c@resize_w450_nl.webp">
+                        </div>
+                        <div class="v-card-name">PUTIH BW</div>
+                        <div class="v-check"><i class="fas fa-check"></i></div>
+                    </div>
+                
+                    <div class="variant-card " onclick="selectVariant(this, '199000', 'MOKA', 'https://down-id.img.susercontent.com/file/id-11134207-8224t-mg11n3nfxkb347@resize_w450_nl.webp')">
+                        <div class="v-card-img">
+                            <img src="https://down-id.img.susercontent.com/file/id-11134207-8224t-mg11n3nfxkb347@resize_w450_nl.webp">
+                        </div>
+                        <div class="v-card-name">MOKA</div>
+                        <div class="v-check"><i class="fas fa-check"></i></div>
+                    </div>
+                
+                    <div class="variant-card " onclick="selectVariant(this, '199000', 'DUSTY PINK', 'https://down-id.img.susercontent.com/file/id-11134207-822wj-mmvgrt786ygwe7@resize_w450_nl.webp')">
+                        <div class="v-card-img">
+                            <img src="https://down-id.img.susercontent.com/file/id-11134207-822wj-mmvgrt786ygwe7@resize_w450_nl.webp">
+                        </div>
+                        <div class="v-card-name">DUSTY PINK</div>
+                        <div class="v-check"><i class="fas fa-check"></i></div>
+                    </div>
+                
+                    <div class="variant-card " onclick="selectVariant(this, '199000', 'BEIGE', 'https://down-id.img.susercontent.com/file/id-11134207-822wn-mmvgrt788d1c57@resize_w450_nl.webp')">
+                        <div class="v-card-img">
+                            <img src="https://down-id.img.susercontent.com/file/id-11134207-822wn-mmvgrt788d1c57@resize_w450_nl.webp">
+                        </div>
+                        <div class="v-card-name">BEIGE</div>
+                        <div class="v-check"><i class="fas fa-check"></i></div>
+                    </div>
+                
+                    <div class="variant-card " onclick="selectVariant(this, '199000', 'ABU TUA', 'https://down-id.img.susercontent.com/file/id-11134207-822wl-mmvgrt789rls5c@resize_w450_nl.webp')">
+                        <div class="v-card-img">
+                            <img src="https://down-id.img.susercontent.com/file/id-11134207-822wl-mmvgrt789rls5c@resize_w450_nl.webp">
+                        </div>
+                        <div class="v-card-name">ABU TUA</div>
+                        <div class="v-check"><i class="fas fa-check"></i></div>
+                    </div>
+                
+            </div>
+        </div>
+
+        <div class="shipping-box" onclick="scrollToOrder()">
+            <div class="shipping-icon"><i class="fas fa-truck-fast"></i></div>
+            <div class="shipping-text">
+                <div class="shipping-title" id="dynamic-shipping-date">Garansi Tiba: ...</div>
+                <div class="shipping-desc">Dapatkan Jaminan Ongkir s/d 20RB</div>
+            </div>
+            <i class="fas fa-chevron-right" style="color:#ccc; font-size:10px;"></i>
+        </div>
+
+        <div style="background: #fff; border-bottom: 8px solid #f1f1f1;">
+            <div class="dropdown-trigger active" onclick="toggleDropdown(this)">DESKRIPSI PRODUK <i class="fas fa-chevron-down"></i></div>
+            <div class="dropdown-content active">Manset  yang Adem, elastis dan super nyaman! Cocok dipakai seharian tidak bikin gerah, dan mudah dipadukan dengan outfit apapun.
+
+Pilihan Tepat Dimiliki Untuk Hijabers Aktif
+Rasakan Kenyamanan Seharian Tanpa Rasa Gerah
+
+Keunggulan Produk :
+•Bahan Spandek Berkualitas – Lembut di kulit, elastis
+•Nyaman Dipakai – Adem dan ringan, cocok dipakai harian maupun aktivitas outdoor.
+•Stretch 4 Arah – Lentur mengikuti bentuk tubuh tanpa membuat sesak.
+•Desain Simpel & Polos – Mudah dipadukan dengan berbagai outfit.
+•Tidak Menerawang – Aman dipakai sebagai dalaman hijab atau gamis.
+•Jahitan Rapi & Kuat – Tahan lama meski sering dicuci.</div>
+            
+            <div class="dropdown-trigger" onclick="toggleDropdown(this)">PANDUAN UKURAN <i class="fas fa-chevron-down"></i></div>
+            <div class="dropdown-content">UNTUK SIZE DAPAT MELIHAT RINCIAN DIBAWAH INI
+
+SIZE (M)
+LD : STRETCH TO 90-92 CM
+PB : 55 CM
+PANJANG LENGAN : 53-55 CM
+PERKIRAAN BB    : 30-45 Kg
+
+SIZE (L)
+LD : STRETCH TO 95-97 CM
+PB : 65 CM
+PANJANG LENGAN : 58-60 CM
+PERKIRAAN BB    : 45-55 Kg
+
+SIZE (XL)
+LD : STRETCH TO 100-102 CM
+PB : 70 CM
+PANJANG LENGAN : 60-62 CM
+PERKIRAAN BB    : 55-65 Kg
+
+SIZE (XXL)
+LD : STRETCH TO 110-120 CM
+PB : 75 CM
+PANJANG LENGAN : 62-65 CM
+PERKIRAAN BB    : 65-85 Kg<img src="https://down-id.img.susercontent.com/file/id-11134207-8224u-mjcz2qts2dc537.webp" style="width:100%; margin-top:10px; border-radius:4px;"></div>
+            <div class="dropdown-trigger" onclick="toggleDropdown(this)">SPESIFIKASI TEKNIS <i class="fas fa-chevron-down"></i></div>
+            <div class="dropdown-content">Cocok Digunakan Untuk:
+•Dalaman gamis, dress, kebaya
+•Olahraga ringan (yoga, jogging, pilates)
+•Outfit kasual dengan celana/rok
+•Hijabers yang ingin tampil rapi dan nyaman
+
+ Perawatan:
+•Cuci dengan tangan lebih awet
+•Hindari pemutih berlebihan
+•Jemur di tempat teduh agar warna tetap tahan lama</div>
+        </div>
+
+        
+        <div class="s-section-features">
+            <div style="padding: 20px 15px 5px; font-weight: 800; font-size: 13px; color: #888; text-transform: uppercase; letter-spacing: 1px;">Fitur Unggulan</div>
+            <div class="features-vertical-list">
+                
+                    <div class="feature-vertical-item">
+                        <img src="https://down-id.img.susercontent.com/file/id-11134207-8224t-mijmjq7szv28eb@resize_w450_nl.webp" class="feature-img-large">
+                        <div class="feature-content-large">
+                            <div class="feature-title-large">Sentuhan Mewah Spandek Premium</div>
+                            <div class="feature-desc-large">Nikmati kelembutan ekstra yang membelai kulit tanpa iritasi, memberikan kenyamanan mewah berkelas sepanjang hari.</div>
+                        </div>
+                    </div>
+                
+                    <div class="feature-vertical-item">
+                        <img src="https://down-id.img.susercontent.com/file/id-11134207-8224u-mijmjq7t2o74eb@resize_w450_nl.webp" class="feature-img-large">
+                        <div class="feature-content-large">
+                            <div class="feature-title-large">Sejuk Bebas Gerah Seharian</div>
+                            <div class="feature-desc-large">Serat kain dengan sirkulasi udara optimal menjaga lengan Anda tetap dingin dan segar meski berpakaian berlapis.</div>
+                        </div>
+                    </div>
+                
+                    <div class="feature-vertical-item">
+                        <img src="https://down-id.img.susercontent.com/file/id-11134207-82252-mijmjq7t5hc079@resize_w450_nl.webp" class="feature-img-large">
+                        <div class="feature-content-large">
+                            <div class="feature-title-large">Fit Sempurna Super Elastis</div>
+                            <div class="feature-desc-large">Material stretch superior yang menyesuaikan ukuran lengan dengan presisi, bebaskan setiap gerakan tanpa rasa sesak.</div>
+                        </div>
+                    </div>
+                
+                    <div class="feature-vertical-item">
+                        <img src="https://down-id.img.susercontent.com/file/id-11134207-8224o-mijmjq7t6vwg78@resize_w450_nl.webp" class="feature-img-large">
+                        <div class="feature-content-large">
+                            <div class="feature-title-large">Tiga Pilihan Gaya Elegan</div>
+                            <div class="feature-desc-large">Satu paket hemat berisi tiga manset premium untuk menyempurnakan setiap padu padan outfit hijab harian Anda.</div>
+                        </div>
+                    </div>
+                
+            </div>
+        </div>
+
+        
+        <div class="s-section">
+            <div class="s-section-header" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+                <div class="s-section-title">PENILAIAN PRODUK</div>
+                <div style="color:#EE4D2D; font-size:12px; font-weight:600; cursor:pointer;">Lihat Semua ></div>
+            </div>
+            <div class="s-testimonial-list">
+                
+                    <div class="s-testimonial-item">
+                        <div class="st-header">
+                            <img src="https://down-id.img.susercontent.com/file/id-11134233-8224z-mkfx5vajoirk18_tn" class="st-avatar">
+                            <div class="st-user-info">
+                                <div class="st-name">mayahero</div>
+                                <div class="st-stars">★★★★★</div>
+                                <div class="st-meta"><span class="dynamic-date" data-days-ago="7"></span></div>
+                            </div>
+                        </div>
+                        <div class="st-text">Suka banget sama bahannya, beneran adem dan gak gatal di kulit. Pas banget buat daleman gamis. Packingnya juga rapi pol!</div>
+                        <div class="st-media"><img src="https://down-id.img.susercontent.com/file/id-11134103-8224t-mhj49ulgslja1a.webp" onclick="openLightbox('https://down-id.img.susercontent.com/file/id-11134103-8224t-mhj49ulgslja1a.webp')" style="cursor:pointer;"></div>
+                    </div>
+                
+                    <div class="s-testimonial-item">
+                        <div class="st-header">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgji2KRz44e8qEJ8V3BW3ZF6g6te3JH-GVk_78oehyIw&s" class="st-avatar">
+                            <div class="st-user-info">
+                                <div class="st-name">indahintana</div>
+                                <div class="st-stars">★★★★★</div>
+                                <div class="st-meta"><span class="dynamic-date" data-days-ago="5"></span></div>
+                            </div>
+                        </div>
+                        <div class="st-text">untuk aku yang bb 46 dan ld 80an nekat pesen m dan ternyata ga kekecilan pas bagus cocok ga sesek sama sekaki kalo dipakai, bahannya molor juga jadi ga buat sesek tapi ga yang molor jelek gitu, bahannya nerawang dikit banget ya wajarlah kalo nerawah orang namanya juga manset🙄 tapi ini ga senerawang manset dari merk lain. POKOKNYA GA NYESEL BELI DEH, besok mau langganan disini aja</div>
+                        <div class="st-media"><img src="https://down-id.img.susercontent.com/file/id-11134103-82251-mhresxcgikg3a9.webp" onclick="openLightbox('https://down-id.img.susercontent.com/file/id-11134103-82251-mhresxcgikg3a9.webp')" style="cursor:pointer;"></div>
+                    </div>
+                
+                    <div class="s-testimonial-item">
+                        <div class="st-header">
+                            <img src="data:image/jpeg;base64,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" class="st-avatar">
+                            <div class="st-user-info">
+                                <div class="st-name">Bella Ladygo</div>
+                                <div class="st-stars">★★★★★</div>
+                                <div class="st-meta"><span class="dynamic-date" data-days-ago="11"></span></div>
+                            </div>
+                        </div>
+                        <div class="st-text">Beli yang isi 3 ini lebih hemat. Bahannya lembut dan nyerap keringat. Warnanya juga sesuai foto. Recommended seller!</div>
+                        <div class="st-media"><img src="https://down-id.img.susercontent.com/file/id-11134103-8224x-mh8lsappq6fe8c.webp" onclick="openLightbox('https://down-id.img.susercontent.com/file/id-11134103-8224x-mh8lsappq6fe8c.webp')" style="cursor:pointer;"></div>
+                    </div>
+                
+                    <div class="s-testimonial-item">
+                        <div class="st-header">
+                            <img src="https://ui-avatars.com/api/?name=suciadewantisitorus" class="st-avatar">
+                            <div class="st-user-info">
+                                <div class="st-name">suciadewantisitorus</div>
+                                <div class="st-stars">★★★★★</div>
+                                <div class="st-meta"><span class="dynamic-date" data-days-ago="8"></span></div>
+                            </div>
+                        </div>
+                        <div class="st-text">Bahannya bagus banget, Warna sesuai jadi enak ngepaduin dengan baju yg lengannya pendek. Pengemasan aman banget, makasih ya.</div>
+                        <div class="st-media"><img src="https://down-id.img.susercontent.com/file/id-11134103-8224q-mi96r12dt5vrd2.webp" onclick="openLightbox('https://down-id.img.susercontent.com/file/id-11134103-8224q-mi96r12dt5vrd2.webp')" style="cursor:pointer;"></div>
+                    </div>
+                
+            </div>
+        </div>
+
+        <div id="order-section" style="padding:25px 15px; background:#fff;">
+            <div id="variant-summary"></div>
+            <h3 style="text-align:center; font-weight:900; color:var(--primary); font-size:14px; margin-bottom:15px; text-transform:uppercase;">Formulir Pemesanan</h3>
+            <!-- OrderOnline Embed Code - v8.0.2 --> <div class="ooef"> <form class="orderonline-embed-form" data-username="rara" data-product-slug="long-sleeve-cuff" data-product-id="69dfceff2847e46abd00c95c" id="oo-embed-form-long-sleeve-cuff-4229" data-origin="orderonline"> <div class="ooef-loader"><style>.ooef-loader{visibility: hidden;opacity: 0;position: absolute;left: 0;right: 0;top: 0;bottom: 0;display: flex;justify-content: center;align-items: center;flex-direction: column;animation: ooLoadingIn 10s ease;-webkit-animation: ooLoadingIn 10s ease;animation-fill-mode: forwards;overflow: hidden}@keyframes ooLoadingIn{0%{visibility: hidden;opacity: 0}20%{visibility: visible;opacity: 0}100%{visibility: visible;opacity: 1}}@-webkit-keyframes ooLoadingIn{0%{visibility: hidden;opacity: 0}20%{visibility: visible;opacity: 0}100%{visibility: visible;opacity: 1}}.ooef-loader>div,.ooef-loader>div:after{border-radius: 50%;width: 2.5rem;height: 2.5rem}.ooef-loader>div{font-size: 10px;position: relative;text-indent: -9999em;border: .25rem solid #f5f5f5;border-left: .25rem solid #55c4cf;-webkit-transform: translateZ(0);-ms-transform: translateZ(0);transform: translateZ(0);-webkit-animation: ooLoading 1.1s infinite linear;animation: ooLoading 1.1s infinite linear}.ooef-loader.error>div{border-left: .25rem solid #ff4500;animation-duration: 5s}@-webkit-keyframes ooLoading{0%{-webkit-transform: rotate(0);transform: rotate(0)}100%{-webkit-transform: rotate(360deg);transform: rotate(360deg)}}@keyframes ooLoading{0%{-webkit-transform: rotate(0);transform: rotate(0)}100%{-webkit-transform: rotate(360deg);transform: rotate(360deg)}}</style><div aria-live="polite" role="status"><div>Loading...</div></div></div> </form> </div> <script> if (typeof xLogError != 'function') { var xLogError = function (error) { var req = new XMLHttpRequest(); var payload = JSON.stringify({ url: document.location.href, line: error.line, stack: error.stack }); var params = 'message=' + encodeURIComponent(error.name) + '&payload=' + encodeURIComponent(payload) + '&type=embed&level=error'; req.open('POST', 'https://api.orderonline.id/log', true); req.setRequestHeader('Content-type', 'application/x-www-form-urlencoded'); req.send(params); }; } try { if (typeof xEmbedScript != 'function') { var xEmbedScript = function () { !function(w, d, e, v, id, t, s) { if (d.getElementById(id)) return; t = d.createElement(e);t.async = !0;t.src = v;t.id = id; s = d.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s); }(window, document, 'script', 'https://cdn.orderonline.id/js/embed-v2-slim.min.js?v=8.0.2', 'oo-embed-js'); }; } if (typeof xEmbedInit != 'function') { var xEmbedInit = function (w, n) { if (w.ooe) return; n = w.ooe = function() { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) }; if (!w._ooe) w._ooe = n; n.push = n;n.loaded = !0;n.version = '8.0.2';n.queue = []; }; } xEmbedInit(window); ooe('setup', 'redirect', 'https://rara.orderonline.id'); ooe('init', '5f12ee789d8e8e5e870172ee', '69dfceff2847e46abd00c95c', '69dfceff2847e46abd00c95d', 'oo-embed-form-long-sleeve-cuff-4229', {"mode":"page","action":"Klik untuk pemesanan","title":"Form Pemesanan","triggerPixel":true,"triggerGtm":false}); if (!window.jQuery) { !function(w, d, e, v, id, t, s) { if (d.getElementById(id)) return; t = d.createElement(e);t.async = !0;t.src = v;t.id = id; t.addEventListener('load', xEmbedScript); s = d.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s); }(window, document, 'script', 'https://cdn.orderonline.id/js/vendor/jquery.min.js', 'oo-embed-jquery'); } else { xEmbedScript(); } } catch (e) { xLogError(e); throw e; } </script> <!-- End OrderOnline Embed Code -->
+        </div>
+
+        
+    </div>
+    
+    <div id="lightbox" class="lightbox" onclick="this.style.display='none'">
+        <div class="lightbox-container" onclick="event.stopPropagation()">
+            <span class="lightbox-close" onclick="document.getElementById('lightbox').style.display='none'">&times;</span>
+            <img id="lightbox-img">
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const mainSwiper = new Swiper('#main-slider', { 
+            pagination: { el: '.swiper-pagination', clickable: true },
+            autoplay: { delay: 5000, disableOnInteraction: false }
+        });
+
+        const videos = document.querySelectorAll('.slide-video');
+        videos.forEach(video => {
+          video.onplay = () => mainSwiper.autoplay.stop();
+          video.onended = () => {
+            mainSwiper.slideNext();
+            mainSwiper.autoplay.start();
+          };
+          video.onpause = () => {
+            if(!video.ended) mainSwiper.autoplay.start();
+          };
+        });
+
+        function selectVariant(el, price, name, image) {
+            document.querySelectorAll('.variant-card').forEach(c => c.classList.remove('active'));
+            el.classList.add('active');
+            document.getElementById('selected-variant-name').innerText = name;
+            
+            if(price) document.getElementById('display-price').innerText = 'Rp ' + Number(price).toLocaleString('id-ID');
+            
+            if (image) {
+                const mainImg = document.getElementById('main-product-img');
+                if (mainImg) {
+                    mainImg.src = image;
+                    const targetIndex = 1;
+                    if (mainSwiper) mainSwiper.slideTo(targetIndex);
+                }
+            }
+
+            const summary = document.getElementById('variant-summary');
+            if (summary) {
+              // Fixed: Escape backticks to prevent premature termination of outer template literal
+              summary.innerHTML = `
+                <div class="summary-card">
+                    <img src="${image}" class="summary-img">
+                    <div class="summary-info">
+                        <div class="summary-title">[3PCS] Premium Long Sleeve Cuff | Inner Muslimah,Bahan Spandek Premium</div>
+                        <div class="summary-variant-name">${name}</div>
+                    </div>
+                    <i class="fas fa-check-circle summary-check"></i>
+                </div>`;
+            }
+        }
+
+        function toggleDropdown(el) { el.classList.toggle('active'); el.nextElementSibling.classList.toggle('active'); }
+        function scrollToOrder() { 
+          const target = document.getElementById('order-section');
+          if (target) target.scrollIntoView({ behavior: 'smooth' }); 
+        }
+        function openLightbox(src) { 
+          const img = document.getElementById('lightbox-img');
+          if (img) img.src = src; 
+          const lb = document.getElementById('lightbox');
+          if (lb) lb.style.display = 'flex'; 
+        }
+        
+        function updateShippingDate() {
+            const months = ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agt", "Sep", "Okt", "Nov", "Des"];
+            const today = new Date();
+            const start = new Date(today);
+            start.setDate(today.getDate() + 3);
+            const end = new Date(today);
+            end.setDate(today.getDate() + 6);
+            
+            let dateStr = "";
+            if (start.getMonth() === end.getMonth()) {
+                dateStr = start.getDate() + " - " + end.getDate() + " " + months[start.getMonth()];
+            } else {
+                dateStr = start.getDate() + " " + months[start.getMonth()] + " - " + end.getDate() + " " + months[end.getMonth()];
+            }
+            
+            const el = document.getElementById('dynamic-shipping-date');
+            if (el) el.innerText = "Garansi Tiba: " + dateStr;
+        }
+
+        function updateReviewDates() {
+            const els = document.querySelectorAll('.dynamic-date');
+            els.forEach(el => {
+                const daysAgo = parseInt(el.getAttribute('data-days-ago')) || 0;
+                const date = new Date();
+                date.setDate(date.getDate() - daysAgo);
+                
+                const day = String(date.getDate()).padStart(2, '0');
+                const month = String(date.getMonth() + 1).padStart(2, '0');
+                const year = date.getFullYear();
+                
+                el.innerText = day + '/' + month + '/' + year;
+            });
+        }
+
+        function startTimer(duration, display) {
+            let timer = duration, hours, minutes, seconds;
+            setInterval(function () {
+                hours = Math.floor(timer / 3600);
+                minutes = Math.floor((timer % 3600) / 60);
+                seconds = Math.floor(timer % 60);
+
+                const hDisplay = hours < 10 ? "0" + hours : hours;
+                const mDisplay = minutes < 10 ? "0" + minutes : minutes;
+                const sDisplay = seconds < 10 ? "0" + seconds : seconds;
+
+                if (display) display.textContent = hDisplay + " : " + mDisplay + " : " + sDisplay;
+
+                if (--timer < 0) {
+                    timer = duration;
+                }
+            }, 1000);
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            updateShippingDate();
+            updateReviewDates();
+            
+            const firstVariant = document.querySelector('.variant-card');
+            if(firstVariant) (firstVariant).click();
+
+            const timerDisplay = document.querySelector('#timer');
+            if(timerDisplay) {
+                const durationHours = 3;
+                startTimer(3600 * durationHours, timerDisplay);
+            }
+
+            if (document.querySelector('.related-swiper')) {
+                new Swiper('.related-swiper', {
+                    slidesPerView: 'auto',
+                    spaceBetween: 15,
+                    freeMode: true,
+                    autoplay: { delay: 3000, disableOnInteraction: false },
+                });
+            }
+        });
+    </script>
+</body>
+</html>
